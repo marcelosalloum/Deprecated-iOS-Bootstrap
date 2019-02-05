@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,15 +26,15 @@
             </objects>
             <point key="canvasLocation" x="-2089" y="179"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="FOF-1L-He5">
             <objects>
-                <viewController id="ysx-YM-0yp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ysx-YM-0yp" customClass="WelcomeViewController" customModule="iOS_Bootstrap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nck-av-wbQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVp-TJ-h9i">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lunch_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rVp-TJ-h9i">
                                 <rect key="frame" x="67" y="108" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -41,18 +42,35 @@
                                 <rect key="frame" x="168" y="349" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="ysx-YM-0yp" eventType="touchUpInside" id="SHD-qV-6bV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBa-rA-dDY">
                                 <rect key="frame" x="163" y="407" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Signup"/>
+                                <connections>
+                                    <action selector="signUpButtonClicked:" destination="ysx-YM-0yp" eventType="touchUpInside" id="z6J-n2-ZFS"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwN-BD-ans">
-                                <rect key="frame" x="136" y="487" width="102" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terms of Use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwN-BD-ans" customClass="DesignableLabel" customModule="iOS_Bootstrap" customModuleProvider="target">
+                                <rect key="frame" x="106" y="465" width="185" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,32 +89,64 @@
         <!--Login-->
         <scene sceneID="d1m-h0-OR2">
             <objects>
-                <viewController title="Login" id="Ggo-u1-ULy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ggo-u1-ULy" customClass="LoginViewController" customModule="iOS_Bootstrap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cQU-Di-WJc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cm-xr-l7H">
-                                <rect key="frame" x="105" y="256" width="115" height="30"/>
+                                <rect key="frame" x="114" y="345" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Forgot Password"/>
+                                <connections>
+                                    <action selector="forgotPasswordClicked:" destination="Ggo-u1-ULy" eventType="touchUpInside" id="rlI-IU-CM7"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWj-bj-JY0">
+                                <rect key="frame" x="33" y="159" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQI-gG-97C" customClass="DesignableTextField" customModule="iOS_Bootstrap" customModuleProvider="target">
+                                <rect key="frame" x="33" y="211" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qni-1a-lPo" customClass="PersonView" customModule="iOS_Bootstrap" customModuleProvider="target">
+                                <rect key="frame" x="67" y="472" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cj9-b1-ung" customClass="DesignableButton" customModule="iOS_Bootstrap" customModuleProvider="target">
+                                <rect key="frame" x="112" y="282" width="117" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="Ggo-u1-ULy" eventType="touchUpInside" id="4LL-Ys-AXJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kgF-BY-Nl3"/>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="BWj-bj-JY0" id="zv6-cr-2ft"/>
+                        <outlet property="passwordFied" destination="aQI-gG-97C" id="QZY-Cu-sz8"/>
                         <segue destination="34z-C9-mJh" kind="show" id="zgO-zL-G1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hej-gZ-PHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="-132"/>
+            <point key="canvasLocation" x="-127.2" y="-132.68365817091455"/>
         </scene>
         <!--Register-->
         <scene sceneID="JIi-A9-uXx">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" title="Register" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dIt-Fq-qAW" customClass="SignUpViewController" customModule="iOS_Bootstrap" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" title="Register" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dIt-Fq-qAW" customClass="SignUpViewController" customModule="iOS_Bootstrap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eqz-0B-w7o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +161,7 @@
         <!--Forgot Password-->
         <scene sceneID="ZcC-oR-wDa">
             <objects>
-                <viewController title="Forgot Password" id="34z-C9-mJh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordViewController" title="Forgot Password" useStoryboardIdentifierAsRestorationIdentifier="YES" id="34z-C9-mJh" customClass="ForgotPasswordViewController" customModule="iOS_Bootstrap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dx4-la-oSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,4 +174,7 @@
             <point key="canvasLocation" x="1014" y="-133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lunch_icon" width="2000" height="1800"/>
+    </resources>
 </document>
