@@ -6,7 +6,6 @@
 //  Copyright © 2019 Marcelo Salloum dos Santos. All rights reserved.
 //
 
-
 import UIKit
 
 @IBDesignable
@@ -20,9 +19,13 @@ public class DesignableLabel: UILabel {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = lineHeight - self.font.pointSize
             paragraphStyle.alignment = self.textAlignment
+            var count = 0
+            if let text = self.text {
+                count = text.count
+            }
             attributedString.addAttribute(NSAttributedString.Key(rawValue: "NSParagraphStyleAttributeName"),
                                           value: paragraphStyle,
-                                          range: NSMakeRange(0, self.text!.count))
+                                          range: NSRange(0...count))
             self.attributedText = attributedString
         }
     }

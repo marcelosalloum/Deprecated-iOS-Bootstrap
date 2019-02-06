@@ -46,8 +46,9 @@ open class DesignableButton: UIButton {
 
     @IBInspectable open var spacing: CGFloat = 0 {
         didSet {
-            let attributes = [NSAttributedString.Key.kern : spacing] as [NSAttributedString.Key : Any]
-            self.titleLabel?.attributedText = NSAttributedString(string: (self.titleLabel?.text!)!, attributes: attributes)
+            let attributes = [NSAttributedString.Key.kern: spacing] as [NSAttributedString.Key: Any]
+            self.titleLabel?.attributedText = NSAttributedString(string: (self.titleLabel?.text ?? "")!,
+                                                                 attributes: attributes)
         }
     }
 

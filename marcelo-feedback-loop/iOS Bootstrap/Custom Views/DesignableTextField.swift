@@ -8,14 +8,14 @@
 
 import UIKit
 
-public protocol DesignableTextFieldDelegate {
+public protocol DesignableTextFieldDelegate: class {
     func deleteKeyPressed(sender: DesignableTextField)
 }
 
 @IBDesignable
 open class DesignableTextField: UITextField {
 
-    public var designableDelegate: DesignableTextFieldDelegate? = nil
+    weak var designableDelegate: DesignableTextFieldDelegate?
 
     // MARK: - Shapes
     @IBInspectable open var borderColor: UIColor = UIColor.clear {
