@@ -12,6 +12,7 @@ struct Constants {
     static let flurryAPIKey: String = "WMFS8685YKR8J5Z4XQ5V"
     static let databaseName: String = "iOS_Bootstrap"
     static let idKey: String = "id"
+    static let serverDateFormat = "MM/dd/yyyy"
 }
 
 struct ArticleState {

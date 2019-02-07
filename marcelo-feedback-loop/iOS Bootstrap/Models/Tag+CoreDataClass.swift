@@ -11,7 +11,26 @@ import Foundation
 import CoreData
 import EZCoreData
 
-public class Tag: NSManagedObject {
+extension CodingUserInfoKey {
+    static let context = CodingUserInfoKey(rawValue: "context")
+}
+
+public class Tag: NSManagedObject, Codable {
+
+    required convenience public init(from decoder: Decoder) throws {
+        // Init: First we create NSEntityDescription with NSManagedObjectContext
+        guard let contextUserInfoKey = CodingUserInfoKey.context,
+            let context = decoder.userInfo[contextUserInfoKey] as? NSManagedObjectContext,
+            let entity = NSEntityDescription.entity(forEntityName: "Article", in: context) else {
+                fatalError("Failed to decode Person!")
+        }
+        self.init(entity: entity, insertInto: nil)
+
+        // Decode
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(Int16.self, forKey: .id)
+        label = try values.decode(String.self, forKey: .label)
+    }
 
 }
 

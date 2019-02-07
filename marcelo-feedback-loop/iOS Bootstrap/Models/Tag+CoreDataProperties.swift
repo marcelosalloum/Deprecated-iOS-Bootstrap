@@ -20,6 +20,16 @@ extension Tag {
     @NSManaged public var label: String?
     @NSManaged public var articles: NSSet?
 
+    enum CodingKeys: String, CodingKey {
+        case id
+        case label
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(label, forKey: .label)
+    }
 }
 
 // MARK: Generated accessors for articles

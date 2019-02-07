@@ -25,7 +25,6 @@ extension Article {
     @NSManaged public var website: String?
     @NSManaged public var wasRead: Bool
     @NSManaged public var tags: NSSet?
-
 }
 
 // MARK: Generated accessors for tags
