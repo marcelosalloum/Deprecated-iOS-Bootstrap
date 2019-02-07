@@ -8,14 +8,36 @@
 
 import UIKit
 
-public protocol DesignableTextFieldDelegate {
+public protocol DesignableTextFieldDelegate: class {
     func deleteKeyPressed(sender: DesignableTextField)
 }
 
 @IBDesignable
 open class DesignableTextField: UITextField {
 
-    public var designableDelegate: DesignableTextFieldDelegate? = nil
+    // MARK: - Custom Init
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+
+    open override func prepareForInterfaceBuilder() {   // Used for updating the Interface Builder
+        super.prepareForInterfaceBuilder()
+        commonInit()
+    }
+
+    fileprivate func commonInit() {
+        self.backgroundColor = UIColor.gray5()
+        self.font = UIFont.withSize(15, italic: true)
+        self.borderStyle = .none
+    }
+
+    weak var designableDelegate: DesignableTextFieldDelegate?
 
     // MARK: - Shapes
     @IBInspectable open var borderColor: UIColor = UIColor.clear {
@@ -41,11 +63,6 @@ open class DesignableTextField: UITextField {
 
     @IBInspectable var insetX: CGFloat = 0
     @IBInspectable var insetY: CGFloat = 0
-
-    open override func layoutSubviews() {
-        super.layoutSubviews()
-        self.backgroundColor = UIColor.mainColor()
-    }
 
     @IBInspectable var placeholderColor: UIColor = UIColor.white {
         didSet {

@@ -6,23 +6,46 @@
 //  Copyright © 2019 Marcelo Salloum dos Santos. All rights reserved.
 //
 
-
 import UIKit
 
 @IBDesignable
 public class DesignableLabel: UILabel {
 
-    // MARK: - Formatting
+    // MARK: - Custom Init
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
 
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+
+    open override func prepareForInterfaceBuilder() {   // Used for updating the Interface Builder
+        super.prepareForInterfaceBuilder()
+        commonInit()
+    }
+
+    fileprivate func commonInit() {
+        self.font = UIFont.withSize(CGFloat.random(in: 10...20))
+        self.tintColor = UIColor.mainColor()
+    }
+
+    // MARK: - Formatting
     @IBInspectable public var lineHeight: CGFloat = 0 {
         didSet {
             let attributedString = NSMutableAttributedString(string: self.text!)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = lineHeight - self.font.pointSize
             paragraphStyle.alignment = self.textAlignment
+            var count = 0
+            if let text = self.text {
+                count = text.count
+            }
             attributedString.addAttribute(NSAttributedString.Key(rawValue: "NSParagraphStyleAttributeName"),
                                           value: paragraphStyle,
-                                          range: NSMakeRange(0, self.text!.count))
+                                          range: NSRange(0...count))
             self.attributedText = attributedString
         }
     }
@@ -55,8 +78,6 @@ public class DesignableLabel: UILabel {
         }
     }
 
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        self.backgroundColor = UIColor.mainColor()
-    }
+    @IBInspectable open var textTheme: Int = TextTheme.title.rawValue
+    var colorTheme: ColorTheme = ColorTheme.professional
 }
