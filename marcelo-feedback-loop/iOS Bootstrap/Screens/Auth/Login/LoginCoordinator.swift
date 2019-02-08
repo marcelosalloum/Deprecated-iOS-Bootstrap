@@ -23,7 +23,7 @@ class LoginCoordinator: Coordinator {
 
     override func start() {
         // View Controller:
-        guard let loginViewController = LoginViewController.fromStoryboard("Auth") else { return }
+        guard let loginViewController = LoginViewController.fromStoryboard(.auth) else { return }
         loginViewController.coordinator = self
 
         // Present View Controller:

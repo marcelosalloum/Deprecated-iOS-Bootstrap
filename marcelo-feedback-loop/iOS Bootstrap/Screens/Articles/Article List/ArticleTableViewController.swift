@@ -77,6 +77,7 @@ class ArticleTableViewController: CoordinatedViewController, UISearchResultsUpda
 
         // Navigation Controller
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     override func viewDidAppear(_ animated: Bool) {

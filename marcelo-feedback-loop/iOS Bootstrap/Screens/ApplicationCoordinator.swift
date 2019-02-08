@@ -29,7 +29,7 @@ class ApplicationCoordinator: Coordinator {
 
     fileprivate func setupWelcomeCoordinator() {
         // Setups ArticleTableCoordinator
-        let welcomeCoordinator = WelcomeCoordinator(presenter: rootViewController)
+        let welcomeCoordinator = WelcomeCoordinator(presenter: rootViewController, ezCoreData: ezCoreData)
         welcomeCoordinator.start()
         welcomeCoordinator.stop = {
             self.welcomeCoordinator = nil
@@ -54,8 +54,8 @@ class ApplicationCoordinator: Coordinator {
         rootViewController.navigationBar.prefersLargeTitles = true
 
         let isUserLogged = false
-        if isUserLogged {
-            setupArticleListScreen()
+        if !isUserLogged {
+            setupWelcomeCoordinator()
         } else {
 //            setupWelcomeCoordinator()
             let questionsCollectionCoordinator = QuestionsCollectionCoordinator(presenter: rootViewController)

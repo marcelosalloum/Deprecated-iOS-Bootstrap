@@ -22,7 +22,7 @@ class SignUpCoordinator: Coordinator {
 
     override func start() {
         // View Controller:
-        guard let signUpViewController = SignUpViewController.fromStoryboard("Auth") else { return }
+        guard let signUpViewController = SignUpViewController.fromStoryboard(.auth) else { return }
         signUpViewController.coordinator = self
 
         // Present View Controller:

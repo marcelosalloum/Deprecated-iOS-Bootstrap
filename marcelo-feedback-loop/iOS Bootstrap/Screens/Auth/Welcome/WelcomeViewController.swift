@@ -20,6 +20,14 @@ class WelcomeViewController: CoordinatedViewController {
         self.coordinator?.userDidClickSignUp()
     }
 
+    @IBAction func articleListButtonClicked(_ sender: Any) {
+        self.coordinator?.userDidClickArticleList()
+    }
+
+    @IBAction func collectionButtonClicked(_ sender: DesignableButton) {
+        self.coordinator?.userDidClickCollection()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)

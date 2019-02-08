@@ -17,10 +17,11 @@ class QuestionsCollectionViewController: CoordinatedViewController {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        self.title = "Collection Sample"
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         super.viewWillAppear(animated)
     }
 }

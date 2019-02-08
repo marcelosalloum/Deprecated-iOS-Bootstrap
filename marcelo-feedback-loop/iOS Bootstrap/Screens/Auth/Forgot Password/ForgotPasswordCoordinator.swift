@@ -22,7 +22,7 @@ class ForgotPasswordCoordinator: Coordinator {
 
     override func start() {
         // View Controller:
-        guard let forgotPasswordViewController = ForgotPasswordViewController.fromStoryboard("Auth") else { return }
+        guard let forgotPasswordViewController = ForgotPasswordViewController.fromStoryboard(.auth) else { return }
         forgotPasswordViewController.coordinator = self
 
         // Present View Controller:
