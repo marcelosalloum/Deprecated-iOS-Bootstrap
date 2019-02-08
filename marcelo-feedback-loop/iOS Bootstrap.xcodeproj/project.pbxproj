@@ -24,6 +24,7 @@
 		1F2ACF1A220BA3CB0084BFF0 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ACF19220BA3CB0084BFF0 /* Questions.storyboard */; };
 		1F2BD47522087D4300C128CE /* UIViewController+Toastr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2BD47422087D4300C128CE /* UIViewController+Toastr.swift */; };
 		1F3DB457220CD73500F931A5 /* UserTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DB456220CD73500F931A5 /* UserTextCollectionViewCell.swift */; };
+		1F3DB459220DA9BB00F931A5 /* InnerCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DB458220DA9BB00F931A5 /* InnerCardCollectionViewCell.swift */; };
 		1F4EC6C121E521600060B9DA /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4EC6C021E521600060B9DA /* PaddingLabel.swift */; };
 		1F6C6DAC21F7304300E59082 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C6DAB21F7304300E59082 /* main.swift */; };
 		1F88EFE821D5766900275972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F88EFE721D5766900275972 /* AppDelegate.swift */; };
@@ -113,6 +114,7 @@
 		1F2ACF19220BA3CB0084BFF0 /* Questions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
 		1F2BD47422087D4300C128CE /* UIViewController+Toastr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Toastr.swift"; sourceTree = "<group>"; };
 		1F3DB456220CD73500F931A5 /* UserTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTextCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F3DB458220DA9BB00F931A5 /* InnerCardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F4EC6C021E521600060B9DA /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		1F6C6DAB21F7304300E59082 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1F88EFE421D5766900275972 /* iOS Bootstrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Bootstrap.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				1F3DB456220CD73500F931A5 /* UserTextCollectionViewCell.swift */,
+				1F3DB458220DA9BB00F931A5 /* InnerCardCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				1F196BB721D6F7B1002421AB /* APIHelper.swift in Sources */,
 				1F9B0CB221E50E610069FD3E /* ArticleDetailViewController.swift in Sources */,
 				1F0397C52202481100335E6C /* ViewModelProtocol.swift in Sources */,
+				1F3DB459220DA9BB00F931A5 /* InnerCardCollectionViewCell.swift in Sources */,
 				1F0397BF220218FE00335E6C /* ApplicationCoordinator.swift in Sources */,
 				1F0397C722024BBB00335E6C /* ArticleDetailCoordinator.swift in Sources */,
 				1FADAF5F21E782E7000A4E2E /* Tag+CoreDataProperties.swift in Sources */,
