@@ -20,9 +20,10 @@
 		1F1EC01521E7900D008EB3AF /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1EC01421E7900D008EB3AF /* ArticleDetailViewModel.swift */; };
 		1F2ACF12220B9DD80084BFF0 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ACF11220B9DD80084BFF0 /* AppTheme.swift */; };
 		1F2ACF16220BA3460084BFF0 /* QuestionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ACF15220BA3460084BFF0 /* QuestionsCoordinator.swift */; };
-		1F2ACF18220BA35B0084BFF0 /* QuestionsCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ACF17220BA35B0084BFF0 /* QuestionsCollectionCoordinator.swift */; };
+		1F2ACF18220BA35B0084BFF0 /* QuestionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ACF17220BA35B0084BFF0 /* QuestionsCollectionViewController.swift */; };
 		1F2ACF1A220BA3CB0084BFF0 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ACF19220BA3CB0084BFF0 /* Questions.storyboard */; };
 		1F2BD47522087D4300C128CE /* UIViewController+Toastr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2BD47422087D4300C128CE /* UIViewController+Toastr.swift */; };
+		1F3DB457220CD73500F931A5 /* UserTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DB456220CD73500F931A5 /* UserTextCollectionViewCell.swift */; };
 		1F4EC6C121E521600060B9DA /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4EC6C021E521600060B9DA /* PaddingLabel.swift */; };
 		1F6C6DAC21F7304300E59082 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C6DAB21F7304300E59082 /* main.swift */; };
 		1F88EFE821D5766900275972 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F88EFE721D5766900275972 /* AppDelegate.swift */; };
@@ -108,9 +109,10 @@
 		1F1EC01421E7900D008EB3AF /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		1F2ACF11220B9DD80084BFF0 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		1F2ACF15220BA3460084BFF0 /* QuestionsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsCoordinator.swift; sourceTree = "<group>"; };
-		1F2ACF17220BA35B0084BFF0 /* QuestionsCollectionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsCollectionCoordinator.swift; sourceTree = "<group>"; };
+		1F2ACF17220BA35B0084BFF0 /* QuestionsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsCollectionViewController.swift; sourceTree = "<group>"; };
 		1F2ACF19220BA3CB0084BFF0 /* Questions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
 		1F2BD47422087D4300C128CE /* UIViewController+Toastr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Toastr.swift"; sourceTree = "<group>"; };
+		1F3DB456220CD73500F931A5 /* UserTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F4EC6C021E521600060B9DA /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		1F6C6DAB21F7304300E59082 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1F88EFE421D5766900275972 /* iOS Bootstrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Bootstrap.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,11 +213,20 @@
 		1F2ACF14220BA3250084BFF0 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				1F3DB455220CD6B300F931A5 /* Cells */,
 				1F2ACF15220BA3460084BFF0 /* QuestionsCoordinator.swift */,
-				1F2ACF17220BA35B0084BFF0 /* QuestionsCollectionCoordinator.swift */,
+				1F2ACF17220BA35B0084BFF0 /* QuestionsCollectionViewController.swift */,
 				1F2ACF19220BA3CB0084BFF0 /* Questions.storyboard */,
 			);
 			path = Questions;
+			sourceTree = "<group>";
+		};
+		1F3DB455220CD6B300F931A5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F3DB456220CD73500F931A5 /* UserTextCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		1F6653ED21E37CB300982F99 /* Models */ = {
@@ -731,7 +742,7 @@
 				1FA83208220A12C900FB2B61 /* WelcomeViewController.swift in Sources */,
 				1F4EC6C121E521600060B9DA /* PaddingLabel.swift in Sources */,
 				1F1EC01521E7900D008EB3AF /* ArticleDetailViewModel.swift in Sources */,
-				1F2ACF18220BA35B0084BFF0 /* QuestionsCollectionCoordinator.swift in Sources */,
+				1F2ACF18220BA35B0084BFF0 /* QuestionsCollectionViewController.swift in Sources */,
 				1F2BD47522087D4300C128CE /* UIViewController+Toastr.swift in Sources */,
 				1FA8320A220A12E500FB2B61 /* WelcomeCoordinator.swift in Sources */,
 				1F88EFE821D5766900275972 /* AppDelegate.swift in Sources */,
@@ -751,6 +762,7 @@
 				1F8BDB4921E605C5007A338A /* NSDate+TimeAgo.swift in Sources */,
 				1FA83216220A1AE200FB2B61 /* ForgotPasswordViewController.swift in Sources */,
 				1FADAF6121E782E7000A4E2E /* Article+CoreDataProperties.swift in Sources */,
+				1F3DB457220CD73500F931A5 /* UserTextCollectionViewCell.swift in Sources */,
 				1F9B4A9C21ED3F7300E5E360 /* UIFont+Custom.swift in Sources */,
 				1F88EFF021D5766900275972 /* iOS_Bootstrap.xcdatamodeld in Sources */,
 			);
