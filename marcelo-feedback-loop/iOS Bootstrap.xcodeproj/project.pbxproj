@@ -552,7 +552,7 @@
 				1F88EFE221D5766900275972 /* Resources */,
 				3C313699C20C344E6EEF1795 /* [CP] Embed Pods Frameworks */,
 				1FFDC15522088EDE00C61420 /* Swift Lint */,
-				1F9B4A6C21ECA97700E5E360 /* Crashlytics */,
+				1F9B4A6C21ECA97700E5E360 /* Fabric Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -670,7 +670,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1F9B4A6C21ECA97700E5E360 /* Crashlytics */ = {
+		1F9B4A6C21ECA97700E5E360 /* Fabric Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -680,7 +680,7 @@
 			inputPaths = (
 				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
 			);
-			name = Crashlytics;
+			name = "Fabric Crashlytics";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -979,6 +979,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7LDUSTM628;
 				INFOPLIST_FILE = "iOS Bootstrap/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

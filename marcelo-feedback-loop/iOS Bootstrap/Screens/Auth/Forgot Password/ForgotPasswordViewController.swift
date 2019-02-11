@@ -10,7 +10,7 @@ import UIKit
 
 class ForgotPasswordViewController: CoordinatedViewController {
     @IBOutlet weak var emailTextField: DesignableTextField!
-    
+
     var viewModel: ForgotPasswordViewModel!
 
     @IBAction func forgotPasswordClicked(_ sender: UIButton) {

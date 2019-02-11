@@ -10,7 +10,7 @@ import UIKit
 
 class WelcomeViewModel: NSObject {
     weak var coordinator: WelcomeViewControllerDelegate?
-    
+
     public let objects: [StoryboardName] = [.auth, .news, .collection]
 
     func userDidSelect(indexPath: IndexPath) {
@@ -18,7 +18,6 @@ class WelcomeViewModel: NSObject {
         coordinator?.userDidSelectStoryboard(storyboardName)
     }
 }
-
 
 extension WelcomeViewModel: ListViewModelProtocol {
 

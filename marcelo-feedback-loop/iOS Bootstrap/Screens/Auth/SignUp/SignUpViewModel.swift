@@ -11,7 +11,7 @@ import UIKit
 class SignUpViewModel: NSObject {
 
     weak var coordinator: SignUpViewControllerDelegate?
-    
+
     func signUp(email: String?, password: String?, passwordConfirmation: String?) {
         print(email ?? "", password ?? "", passwordConfirmation ?? "")
     }

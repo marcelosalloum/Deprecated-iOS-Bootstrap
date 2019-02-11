@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hQe-dI-bn3">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -108,8 +108,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Auth" id="wAT-aW-0Bp"/>
                     <connections>
-                        <segue destination="Ggo-u1-ULy" kind="show" id="1jw-5M-x9P"/>
-                        <segue destination="dIt-Fq-qAW" kind="show" id="9Nw-nB-FTh"/>
+                        <segue destination="Ggo-u1-ULy" kind="show" identifier="loadLoginScreen" id="1jw-5M-x9P"/>
+                        <segue destination="dIt-Fq-qAW" kind="show" identifier="loadSignUpScreen" id="9Nw-nB-FTh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HT3-qc-IRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,7 +189,7 @@
                     <connections>
                         <outlet property="emailField" destination="BWj-bj-JY0" id="zv6-cr-2ft"/>
                         <outlet property="passwordFied" destination="aQI-gG-97C" id="QZY-Cu-sz8"/>
-                        <segue destination="34z-C9-mJh" kind="show" id="zgO-zL-G1f"/>
+                        <segue destination="34z-C9-mJh" kind="show" identifier="loadForgotPasswordScreen" id="zgO-zL-G1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hej-gZ-PHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
