@@ -9,10 +9,11 @@
 import UIKit
 
 class ForgotPasswordViewController: CoordinatedViewController {
+    @IBOutlet weak var emailTextField: DesignableTextField!
 
-    weak var coordinator: ForgotPasswordViewControllerDelegate?
+    var viewModel: ForgotPasswordViewModel!
 
     @IBAction func forgotPasswordClicked(_ sender: UIButton) {
-        coordinator?.userDidClickForgotPassword()
+        viewModel.forgotPassword(email: emailTextField.text)
     }
 }

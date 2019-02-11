@@ -10,10 +10,17 @@ import UIKit
 
 class SignUpViewController: CoordinatedViewController {
 
-    weak var coordinator: SignUpViewControllerDelegate?
+    @IBOutlet weak var emailTextField: DesignableTextField!
+    @IBOutlet weak var passwordTextField: DesignableTextField!
+    @IBOutlet weak var passwordConfirmationTextField: DesignableTextField!
 
-    @IBAction func forgotPasswordClicked(_ sender: UIButton) {
-        coordinator?.userDidClickForgotPassword()
+    var viewModel: SignUpViewModel!
+
+    @IBAction func signUpButtonClicked(_ sender: UIButton) {
+        self.toastr("signUpButtonClicked with -mail: \(emailTextField.text!), password: \(passwordTextField.text!)")
+        viewModel.signUp(email: emailTextField.text,
+                         password: passwordTextField.text,
+                         passwordConfirmation: passwordConfirmationTextField.text)
     }
 
     override func viewWillAppear(_ animated: Bool) {

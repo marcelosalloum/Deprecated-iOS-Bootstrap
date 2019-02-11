@@ -26,7 +26,7 @@ class QuestionsCollectionCoordinator: Coordinator {
     override func start() {
         // View Controller:
         guard let questionsCollectionViewController =
-            QuestionsCollectionViewController.fromStoryboard("Questions") else { return }
+            QuestionsCollectionViewController.fromStoryboard(.collection) else { return }
         questionsCollectionViewController.coordinator = self
 
         // Present View Controller:

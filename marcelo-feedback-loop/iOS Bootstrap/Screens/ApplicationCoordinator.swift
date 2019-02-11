@@ -13,29 +13,7 @@ class ApplicationCoordinator: Coordinator {
     let window: UIWindow
     var ezCoreData: EZCoreData
     let rootViewController: UINavigationController
-    var articleTableCoordinator: ArticleTableCoordinator?
     var welcomeCoordinator: WelcomeCoordinator?
-    var questionsCollectionCoordinator: QuestionsCollectionCoordinator?
-
-    fileprivate func setupArticleListScreen() {
-        // Setups ArticleTableCoordinator
-        let articleTableCoordinator = ArticleTableCoordinator(presenter: rootViewController, ezCoreData: ezCoreData)
-        articleTableCoordinator.start()
-        articleTableCoordinator.stop = {
-            self.articleTableCoordinator = nil
-        }
-        self.articleTableCoordinator = articleTableCoordinator
-    }
-
-    fileprivate func setupWelcomeCoordinator() {
-        // Setups ArticleTableCoordinator
-        let welcomeCoordinator = WelcomeCoordinator(presenter: rootViewController)
-        welcomeCoordinator.start()
-        welcomeCoordinator.stop = {
-            self.welcomeCoordinator = nil
-        }
-        self.welcomeCoordinator = welcomeCoordinator
-    }
 
     init(window: UIWindow) {
         // Init Values
@@ -53,22 +31,25 @@ class ApplicationCoordinator: Coordinator {
         // Configures RootVC
         rootViewController.navigationBar.prefersLargeTitles = true
 
-        let isUserLogged = false
-        if isUserLogged {
-            setupArticleListScreen()
-        } else {
-//            setupWelcomeCoordinator()
-            let questionsCollectionCoordinator = QuestionsCollectionCoordinator(presenter: rootViewController)
-            questionsCollectionCoordinator.start()
-            questionsCollectionCoordinator.stop = {
-                self.questionsCollectionCoordinator = nil
-            }
-            self.questionsCollectionCoordinator = questionsCollectionCoordinator
-        }
+        // SetUp Welcome Coordinator
+        setupWelcomeCoordinator()
+//        let isUserLogged = false
+//        if !isUserLogged {
+//        } else {
+//        }
     }
 
     override func start() {
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()
+    }
+
+    fileprivate func setupWelcomeCoordinator() {
+        let welcomeCoordinator = WelcomeCoordinator(presenter: rootViewController, ezCoreData: ezCoreData)
+        welcomeCoordinator.start()
+        welcomeCoordinator.stop = {
+            self.welcomeCoordinator = nil
+        }
+        self.welcomeCoordinator = welcomeCoordinator
     }
 }

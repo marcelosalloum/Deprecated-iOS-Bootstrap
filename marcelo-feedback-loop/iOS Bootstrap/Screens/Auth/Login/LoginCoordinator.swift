@@ -14,17 +14,21 @@ protocol LoginViewControllerDelegate: class {
 
 class LoginCoordinator: Coordinator {
     private let presenter: UINavigationController
+
     private weak var loginViewController: LoginViewController?
-    private var forgotPasswordCoordinator: ForgotPasswordCoordinator?
 
     init(presenter: UINavigationController) {
         self.presenter = presenter
     }
 
     override func start() {
+        // View Model
+        let viewModel = LoginViewModel()
+        viewModel.coordinator = self
+
         // View Controller:
-        guard let loginViewController = LoginViewController.fromStoryboard("Auth") else { return }
-        loginViewController.coordinator = self
+        guard let loginViewController = LoginViewController.fromStoryboard(.auth) else { return }
+        loginViewController.viewModel = viewModel
 
         // Present View Controller:
         presenter.pushViewController(loginViewController, animated: true)
@@ -36,10 +40,6 @@ class LoginCoordinator: Coordinator {
 extension LoginCoordinator: LoginViewControllerDelegate {
     func userDidClickForgotPassword() {
         let forgotPasswordCoordinator = ForgotPasswordCoordinator(presenter: presenter)
-        forgotPasswordCoordinator.start()
-        forgotPasswordCoordinator.stop = {
-            self.forgotPasswordCoordinator = nil
-        }
-        self.forgotPasswordCoordinator = forgotPasswordCoordinator
+        startCoordinator(forgotPasswordCoordinator)
     }
 }
