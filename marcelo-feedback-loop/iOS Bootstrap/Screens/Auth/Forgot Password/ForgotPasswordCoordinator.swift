@@ -21,19 +21,16 @@ class ForgotPasswordCoordinator: Coordinator {
     }
 
     override func start() {
+        // View Model
+        let viewModel = ForgotPasswordViewModel()
+
         // View Controller:
         guard let forgotPasswordViewController = ForgotPasswordViewController.fromStoryboard(.auth) else { return }
-        forgotPasswordViewController.coordinator = self
+        forgotPasswordViewController.viewModel = viewModel
 
         // Present View Controller:
         presenter.pushViewController(forgotPasswordViewController, animated: true)
         setDeallocallable(with: forgotPasswordViewController)
         self.forgotPasswordViewController = forgotPasswordViewController
-    }
-}
-
-extension ForgotPasswordCoordinator: ForgotPasswordViewControllerDelegate {
-    func userDidClickForgotPassword() {
-        forgotPasswordViewController?.toastr("userDidClickForgotPassword")
     }
 }

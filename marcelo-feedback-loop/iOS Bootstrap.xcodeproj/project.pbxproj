@@ -29,6 +29,9 @@
 		1F2ACF18220BA35B0084BFF0 /* QuestionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ACF17220BA35B0084BFF0 /* QuestionsCollectionViewController.swift */; };
 		1F2ACF1A220BA3CB0084BFF0 /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ACF19220BA3CB0084BFF0 /* Collection.storyboard */; };
 		1F2BD47522087D4300C128CE /* UIViewController+Toastr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2BD47422087D4300C128CE /* UIViewController+Toastr.swift */; };
+		1F3C24DC2211BA6B00A7C996 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C24DB2211BA6B00A7C996 /* SignUpViewModel.swift */; };
+		1F3C24DE2211BD3C00A7C996 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C24DD2211BD3C00A7C996 /* LoginViewModel.swift */; };
+		1F3C24E02211BE9D00A7C996 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3C24DF2211BE9D00A7C996 /* ForgotPasswordViewModel.swift */; };
 		1F3DB457220CD73500F931A5 /* UserTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DB456220CD73500F931A5 /* UserTextCollectionViewCell.swift */; };
 		1F3DB459220DA9BB00F931A5 /* InnerCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DB458220DA9BB00F931A5 /* InnerCardCollectionViewCell.swift */; };
 		1F4EC6C121E521600060B9DA /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4EC6C021E521600060B9DA /* PaddingLabel.swift */; };
@@ -124,6 +127,9 @@
 		1F2ACF17220BA35B0084BFF0 /* QuestionsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsCollectionViewController.swift; sourceTree = "<group>"; };
 		1F2ACF19220BA3CB0084BFF0 /* Collection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
 		1F2BD47422087D4300C128CE /* UIViewController+Toastr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Toastr.swift"; sourceTree = "<group>"; };
+		1F3C24DB2211BA6B00A7C996 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		1F3C24DD2211BD3C00A7C996 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1F3C24DF2211BE9D00A7C996 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		1F3DB456220CD73500F931A5 /* UserTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F3DB458220DA9BB00F931A5 /* InnerCardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F4EC6C021E521600060B9DA /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -478,6 +484,7 @@
 			children = (
 				1FA8320D220A168700FB2B61 /* LoginCoordinator.swift */,
 				1FA8320B220A167100FB2B61 /* LoginViewController.swift */,
+				1F3C24DD2211BD3C00A7C996 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -487,6 +494,7 @@
 			children = (
 				1FA8320F220A19B700FB2B61 /* SignUpCoordinator.swift */,
 				1FA83211220A19E500FB2B61 /* SignUpViewController.swift */,
+				1F3C24DB2211BA6B00A7C996 /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -496,6 +504,7 @@
 			children = (
 				1FA83213220A1AB400FB2B61 /* ForgotPasswordCoordinator.swift */,
 				1FA83215220A1AE200FB2B61 /* ForgotPasswordViewController.swift */,
+				1F3C24DF2211BE9D00A7C996 /* ForgotPasswordViewModel.swift */,
 			);
 			path = "Forgot Password";
 			sourceTree = "<group>";
@@ -769,6 +778,7 @@
 				1F0397BF220218FE00335E6C /* ApplicationCoordinator.swift in Sources */,
 				1F0397C722024BBB00335E6C /* ArticleDetailCoordinator.swift in Sources */,
 				1FADAF5F21E782E7000A4E2E /* Tag+CoreDataProperties.swift in Sources */,
+				1F3C24E02211BE9D00A7C996 /* ForgotPasswordViewModel.swift in Sources */,
 				1F6C6DAC21F7304300E59082 /* main.swift in Sources */,
 				1F0397C3220237FB00335E6C /* UITableViewCell+Reusable.swift in Sources */,
 				1F27761922119B0A00496030 /* AuthHomeViewController.swift in Sources */,
@@ -784,6 +794,7 @@
 				1F2BD47522087D4300C128CE /* UIViewController+Toastr.swift in Sources */,
 				1FA8320A220A12E500FB2B61 /* AuthHomeCoordinator.swift in Sources */,
 				1F88EFE821D5766900275972 /* AppDelegate.swift in Sources */,
+				1F3C24DC2211BA6B00A7C996 /* SignUpViewModel.swift in Sources */,
 				1FA83212220A19E500FB2B61 /* SignUpViewController.swift in Sources */,
 				1F2ACF16220BA3460084BFF0 /* QuestionsCoordinator.swift in Sources */,
 				1F0397C922024C0400335E6C /* ArticleTableCoordinator.swift in Sources */,
@@ -794,6 +805,7 @@
 				1F27761E22119D0400496030 /* WelcomeCoordinator.swift in Sources */,
 				1F2ACF12220B9DD80084BFF0 /* AppTheme.swift in Sources */,
 				1F0397CB220476E200335E6C /* Coordinator.swift in Sources */,
+				1F3C24DE2211BD3C00A7C996 /* LoginViewModel.swift in Sources */,
 				1F8BDB4521E53592007A338A /* Constants.swift in Sources */,
 				1FE54134220A50AE00981D82 /* DesignableLabel.swift in Sources */,
 				1F1A40A121D69524005BC0F3 /* ArticleTableViewController.swift in Sources */,

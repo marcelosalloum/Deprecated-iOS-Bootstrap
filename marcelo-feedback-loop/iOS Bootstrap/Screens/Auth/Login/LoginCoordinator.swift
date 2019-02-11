@@ -22,9 +22,13 @@ class LoginCoordinator: Coordinator {
     }
 
     override func start() {
+        // View Model
+        let viewModel = LoginViewModel()
+        viewModel.coordinator = self
+
         // View Controller:
         guard let loginViewController = LoginViewController.fromStoryboard(.auth) else { return }
-        loginViewController.coordinator = self
+        loginViewController.viewModel = viewModel
 
         // Present View Controller:
         presenter.pushViewController(loginViewController, animated: true)

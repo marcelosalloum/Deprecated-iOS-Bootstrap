@@ -21,9 +21,14 @@ class SignUpCoordinator: Coordinator {
     }
 
     override func start() {
+        // View Model
+        let viewModel = SignUpViewModel()
+        viewModel.coordinator = self
+
         // View Controller:
         guard let signUpViewController = SignUpViewController.fromStoryboard(.auth) else { return }
-        signUpViewController.coordinator = self
+        signUpViewController.viewModel = viewModel
+//        viewModel.delegate = signUpViewController
 
         // Present View Controller:
         presenter.pushViewController(signUpViewController, animated: true)

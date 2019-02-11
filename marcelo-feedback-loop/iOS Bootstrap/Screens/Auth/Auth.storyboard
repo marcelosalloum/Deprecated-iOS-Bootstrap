@@ -213,7 +213,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-9m-PoZ" customClass="DesignableTextField" customModule="iOS_Bootstrap" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-9m-PoZ" customClass="DesignableTextField" customModule="iOS_Bootstrap" customModuleProvider="target">
                                 <rect key="frame" x="30" y="208" width="315" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -226,8 +226,11 @@
                                     <constraint firstAttribute="width" constant="210" id="vIQ-in-uUZ"/>
                                 </constraints>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="signUpButtonClicked:" destination="dIt-Fq-qAW" eventType="touchUpInside" id="iq6-Ka-6w3"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXm-He-Dua" customClass="DesignableTextField" customModule="iOS_Bootstrap" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password confirmation..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXm-He-Dua" customClass="DesignableTextField" customModule="iOS_Bootstrap" customModuleProvider="target">
                                 <rect key="frame" x="30" y="268" width="315" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -252,6 +255,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8xg-K3-4y3"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="qLB-MG-WCk" id="X85-wT-Wya"/>
+                        <outlet property="passwordConfirmationTextField" destination="gXm-He-Dua" id="R3U-aJ-OeW"/>
+                        <outlet property="passwordTextField" destination="idZ-9m-PoZ" id="Xxj-1X-6TN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FT5-Ei-HJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -282,7 +290,7 @@
                                 </constraints>
                                 <state key="normal" title="Forgot Password"/>
                                 <connections>
-                                    <action selector="loginButtonClicked:" destination="Ggo-u1-ULy" eventType="touchUpInside" id="uhL-G4-91x"/>
+                                    <action selector="forgotPasswordClicked:" destination="34z-C9-mJh" eventType="touchUpInside" id="a9x-2L-CpO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -296,23 +304,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sZT-ha-dQC"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="qfc-Ak-LtN" id="zpR-1A-8yH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ht7-wU-UbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1013.6" y="-133.00492610837438"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="fkU-Jg-huO">
-            <objects>
-                <viewController id="Qw9-bk-dpM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="82C-fv-b86">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m9M-Eb-Q7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>
