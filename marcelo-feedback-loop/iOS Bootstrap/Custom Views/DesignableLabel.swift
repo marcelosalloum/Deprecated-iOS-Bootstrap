@@ -28,7 +28,7 @@ public class DesignableLabel: UILabel {
     }
 
     fileprivate func commonInit() {
-        self.font = UIFont.withSize(CGFloat.random(in: 10...20))
+        self.font = UIFont.withSize(16)
         self.tintColor = UIColor.mainColor()
     }
 
