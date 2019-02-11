@@ -28,6 +28,7 @@ class ArticleTableViewModel: NSObject, ListViewModelProtocol {
     // MARK: - Initial Set-up
     var articles: [Article] = []
     weak var delegate: ArticleTableProtocol?
+    weak var coordinator: ArticleTableViewControllerDelegate?
     var ezCoreData: EZCoreData!
 
     override init() {
@@ -55,6 +56,11 @@ class ArticleTableViewModel: NSObject, ListViewModelProtocol {
         didSet {
             searchArticles(searchTerm, orderBy: articlesOrder, ascending: true)
         }
+    }
+
+    func userDidSelect(indexPath: IndexPath) {
+        let article = ArticleTableViewModel.getObject(from: articles, with: indexPath)
+        coordinator?.articleTableViewControllerDidSelectArticle(article)
     }
 
     fileprivate func searchArticles(_ searchTerm: String = "", orderBy: ArticlesOrder = .id, ascending: Bool = true) {

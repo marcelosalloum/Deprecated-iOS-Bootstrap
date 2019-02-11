@@ -27,12 +27,11 @@ class ArticleTableCoordinator: Coordinator {
         // View Controller:
         guard let articleTableViewController = ArticleTableViewController.fromStoryboard(.news) else { return }
         setDeallocallable(with: articleTableViewController)
-        articleTableViewController.title = "News"
-        articleTableViewController.coordinator = self
 
         // View Model:
         let viewModel = ArticleTableViewModel()
         articleTableViewController.viewModel = viewModel
+        viewModel.coordinator = self
         viewModel.delegate = articleTableViewController
         viewModel.ezCoreData = ezCoreData
 

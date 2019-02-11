@@ -13,7 +13,6 @@ class WelcomeViewController: CoordinatedViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var viewModel: WelcomeViewModel!
-    weak var coordinator: WelcomeViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +38,6 @@ extension WelcomeViewController: UITableViewDataSource {
 
 extension WelcomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboardName = WelcomeViewModel.getObject(from: viewModel.objects, with: indexPath)
-        coordinator?.userDidSelectStoryboard(storyboardName)
+        viewModel.userDidSelect(indexPath: indexPath)
     }
 }

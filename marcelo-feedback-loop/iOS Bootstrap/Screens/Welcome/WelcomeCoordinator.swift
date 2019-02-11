@@ -27,11 +27,11 @@ class WelcomeCoordinator: Coordinator {
     override func start() {
         // View Model
         let viewModel = WelcomeViewModel()
+        viewModel.coordinator = self
 
         // View Controller:
         guard let welcomeViewController   = WelcomeViewController.fromStoryboard(.welcome) else { return }
         welcomeViewController.viewModel   = viewModel
-        welcomeViewController.coordinator = self
 
         // Present View Controller:
         presenter.pushViewController(welcomeViewController, animated: true)
