@@ -15,6 +15,7 @@ class ApplicationCoordinator: Coordinator {
     let rootViewController: UINavigationController
     var articleTableCoordinator: ArticleTableCoordinator?
     var welcomeCoordinator: WelcomeCoordinator?
+    var questionsCollectionCoordinator: QuestionsCollectionCoordinator?
 
     fileprivate func setupArticleListScreen() {
         // Setups ArticleTableCoordinator
@@ -24,6 +25,16 @@ class ApplicationCoordinator: Coordinator {
             self.articleTableCoordinator = nil
         }
         self.articleTableCoordinator = articleTableCoordinator
+    }
+
+    fileprivate func setupWelcomeCoordinator() {
+        // Setups ArticleTableCoordinator
+        let welcomeCoordinator = WelcomeCoordinator(presenter: rootViewController)
+        welcomeCoordinator.start()
+        welcomeCoordinator.stop = {
+            self.welcomeCoordinator = nil
+        }
+        self.welcomeCoordinator = welcomeCoordinator
     }
 
     init(window: UIWindow) {
@@ -46,13 +57,13 @@ class ApplicationCoordinator: Coordinator {
         if isUserLogged {
             setupArticleListScreen()
         } else {
-            // Setups ArticleTableCoordinator
-            let welcomeCoordinator = WelcomeCoordinator(presenter: rootViewController)
-            welcomeCoordinator.start()
-            welcomeCoordinator.stop = {
-                self.welcomeCoordinator = nil
+//            setupWelcomeCoordinator()
+            let questionsCollectionCoordinator = QuestionsCollectionCoordinator(presenter: rootViewController)
+            questionsCollectionCoordinator.start()
+            questionsCollectionCoordinator.stop = {
+                self.questionsCollectionCoordinator = nil
             }
-            self.welcomeCoordinator = welcomeCoordinator
+            self.questionsCollectionCoordinator = questionsCollectionCoordinator
         }
     }
 
