@@ -35,8 +35,8 @@ protocol CoordinatorProtocol: AnyObject {
 }
 
 extension CoordinatorProtocol {
-    /// Sets the key Deallocallable object for a coordinator
-    /// This enables dealloaction of the coordinator once the object gets deallocated via onDeinit closure.
+    /// Sets the key Deallocable object for a coordinator
+    /// This enables dealloacation of the coordinator once the object gets deallocated via onDeinit closure.
     func setDeallocallable(with object: DeInitCallable) {
         deallocallable?.onDeinit = nil
         object.onDeinit = { [weak self] in
@@ -54,6 +54,7 @@ extension CoordinatorProtocol {
     func removeChildCoordinator(childCoordinator: Coordinator) {
         self.childCoordinators = self.childCoordinators.filter { $0 !== childCoordinator }
     }
+
 }
 
 // MARK: - Declaring the cordinator base class
@@ -65,4 +66,12 @@ class Coordinator: NSObject, CoordinatorProtocol {
     weak var deallocallable: DeInitCallable?
 
     var childCoordinators = [Coordinator]()
+
+    func startCoordinator(_ childCoordinator: Coordinator) {
+        childCoordinator.start()
+        childCoordinator.stop = {
+            self.removeChildCoordinator(childCoordinator: childCoordinator)
+        }
+        self.addChildCoordinator(childCoordinator: childCoordinator)
+    }
 }

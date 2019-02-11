@@ -45,10 +45,6 @@ class ArticleTableCoordinator: Coordinator {
 extension ArticleTableCoordinator: ArticleTableViewControllerDelegate {
     func articleTableViewControllerDidSelectArticle(_ selectedArticle: Article) {
         let articleDetailCoordinator = ArticleDetailCoordinator(presenter: presenter, article: selectedArticle)
-        articleDetailCoordinator.start()
-        articleDetailCoordinator.stop = {
-            self.removeChildCoordinator(childCoordinator: articleDetailCoordinator)
-        }
-        self.addChildCoordinator(childCoordinator: articleDetailCoordinator)
+        startCoordinator(articleDetailCoordinator)
     }
 }

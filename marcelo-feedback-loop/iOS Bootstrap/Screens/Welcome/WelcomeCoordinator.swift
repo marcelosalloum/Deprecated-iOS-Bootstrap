@@ -58,30 +58,18 @@ extension WelcomeCoordinator: WelcomeViewControllerDelegate {
     fileprivate func setupQuestionsCollectionScreen() {
         // Setups QuestionsCollectionCoordinator
         let questionsCollectionCoordinator = QuestionsCollectionCoordinator(presenter: presenter)
-        questionsCollectionCoordinator.start()
-        questionsCollectionCoordinator.stop = {
-            self.removeChildCoordinator(childCoordinator: questionsCollectionCoordinator)
-        }
-        self.addChildCoordinator(childCoordinator: questionsCollectionCoordinator)
+        startCoordinator(questionsCollectionCoordinator)
     }
 
     fileprivate func setupArticleListScreen() {
         // Setups ArticleTableCoordinator
         let articleTableCoordinator = ArticleTableCoordinator(presenter: presenter, ezCoreData: ezCoreData)
-        articleTableCoordinator.start()
-        articleTableCoordinator.stop = {
-            self.removeChildCoordinator(childCoordinator: articleTableCoordinator)
-        }
-        self.addChildCoordinator(childCoordinator: articleTableCoordinator)
+        startCoordinator(articleTableCoordinator)
     }
 
     fileprivate func setupAuthHomeCoordinator() {
         // Setups ArticleTableCoordinator
         let authHomeCoordinator = AuthHomeCoordinator(presenter: presenter, ezCoreData: ezCoreData)
-        authHomeCoordinator.start()
-        authHomeCoordinator.stop = {
-            self.removeChildCoordinator(childCoordinator: authHomeCoordinator)
-        }
-        self.addChildCoordinator(childCoordinator: authHomeCoordinator)
+        startCoordinator(authHomeCoordinator)
     }
 }

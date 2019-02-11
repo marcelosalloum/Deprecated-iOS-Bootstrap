@@ -36,10 +36,6 @@ class LoginCoordinator: Coordinator {
 extension LoginCoordinator: LoginViewControllerDelegate {
     func userDidClickForgotPassword() {
         let forgotPasswordCoordinator = ForgotPasswordCoordinator(presenter: presenter)
-        forgotPasswordCoordinator.start()
-        forgotPasswordCoordinator.stop = {
-            self.removeChildCoordinator(childCoordinator: forgotPasswordCoordinator)
-        }
-        self.addChildCoordinator(childCoordinator: forgotPasswordCoordinator)
+        startCoordinator(forgotPasswordCoordinator)
     }
 }

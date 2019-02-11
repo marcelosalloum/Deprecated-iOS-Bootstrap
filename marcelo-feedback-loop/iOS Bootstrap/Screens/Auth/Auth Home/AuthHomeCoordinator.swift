@@ -40,19 +40,11 @@ class AuthHomeCoordinator: Coordinator {
 extension AuthHomeCoordinator: AuthHomeViewControllerDelegate {
     func userDidClickLogin() {
         let loginCoordinator = LoginCoordinator(presenter: presenter)
-        loginCoordinator.start()
-        loginCoordinator.stop = {
-            self.removeChildCoordinator(childCoordinator: loginCoordinator)
-        }
-        self.addChildCoordinator(childCoordinator: loginCoordinator)
+        startCoordinator(loginCoordinator)
     }
 
     func userDidClickSignUp() {
         let signUpCoordinator = SignUpCoordinator(presenter: presenter)
-        signUpCoordinator.start()
-        signUpCoordinator.stop = {
-            self.removeChildCoordinator(childCoordinator: signUpCoordinator)
-        }
-        self.addChildCoordinator(childCoordinator: signUpCoordinator)
+        startCoordinator(signUpCoordinator)
     }
 }

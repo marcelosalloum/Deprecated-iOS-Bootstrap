@@ -467,8 +467,8 @@
 		1FA83201220A123D00FB2B61 /* Auth Home */ = {
 			isa = PBXGroup;
 			children = (
-				1F27761822119B0A00496030 /* AuthHomeViewController.swift */,
 				1FA83209220A12E500FB2B61 /* AuthHomeCoordinator.swift */,
+				1F27761822119B0A00496030 /* AuthHomeViewController.swift */,
 			);
 			path = "Auth Home";
 			sourceTree = "<group>";
