@@ -26,7 +26,7 @@ class ArticleTableCoordinator: Coordinator {
 
     override func start() {
         // View Controller:
-        guard let articleTableViewController = ArticleTableViewController.fromStoryboard(.articles) else { return }
+        guard let articleTableViewController = ArticleTableViewController.fromStoryboard(.news) else { return }
         setDeallocallable(with: articleTableViewController)
         articleTableViewController.title = "News"
         articleTableViewController.coordinator = self

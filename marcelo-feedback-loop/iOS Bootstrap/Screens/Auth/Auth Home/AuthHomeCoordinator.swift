@@ -12,8 +12,6 @@ import EZCoreData
 protocol AuthHomeViewControllerDelegate: class {
     func userDidClickLogin()
     func userDidClickSignUp()
-    func userDidClickArticleList()
-    func userDidClickCollection()
 }
 
 class AuthHomeCoordinator: Coordinator {
@@ -43,24 +41,6 @@ class AuthHomeCoordinator: Coordinator {
 }
 
 extension AuthHomeCoordinator: AuthHomeViewControllerDelegate {
-    func userDidClickArticleList() {
-        let newCoordinator = ArticleTableCoordinator(presenter: presenter, ezCoreData: ezCoreData)
-        newCoordinator.start()
-        newCoordinator.stop = {
-            self.articleTableCoordinator = nil
-        }
-        self.articleTableCoordinator = newCoordinator
-    }
-
-    func userDidClickCollection() {
-        let newCoordinator = QuestionsCollectionCoordinator(presenter: presenter)
-        newCoordinator.start()
-        newCoordinator.stop = {
-            self.questionsCollectionCoordinator = nil
-        }
-        self.questionsCollectionCoordinator = newCoordinator
-    }
-
     func userDidClickLogin() {
         let loginCoordinator = LoginCoordinator(presenter: presenter)
         loginCoordinator.start()
