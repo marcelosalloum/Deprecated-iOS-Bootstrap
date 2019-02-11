@@ -14,8 +14,8 @@ protocol LoginViewControllerDelegate: class {
 
 class LoginCoordinator: Coordinator {
     private let presenter: UINavigationController
+
     private weak var loginViewController: LoginViewController?
-    private var forgotPasswordCoordinator: ForgotPasswordCoordinator?
 
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -38,8 +38,8 @@ extension LoginCoordinator: LoginViewControllerDelegate {
         let forgotPasswordCoordinator = ForgotPasswordCoordinator(presenter: presenter)
         forgotPasswordCoordinator.start()
         forgotPasswordCoordinator.stop = {
-            self.forgotPasswordCoordinator = nil
+            self.removeChildCoordinator(childCoordinator: forgotPasswordCoordinator)
         }
-        self.forgotPasswordCoordinator = forgotPasswordCoordinator
+        self.addChildCoordinator(childCoordinator: forgotPasswordCoordinator)
     }
 }

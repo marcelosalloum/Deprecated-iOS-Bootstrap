@@ -16,12 +16,9 @@ protocol AuthHomeViewControllerDelegate: class {
 
 class AuthHomeCoordinator: Coordinator {
     private let presenter: UINavigationController
-    private weak var authHomeViewController: AuthHomeViewController?
-    private var loginCoordinator: LoginCoordinator?
-    private var signUpCoordinator: SignUpCoordinator?
-    private var articleTableCoordinator: ArticleTableCoordinator?
-    private var questionsCollectionCoordinator: QuestionsCollectionCoordinator?
     private var ezCoreData: EZCoreData!
+
+    private weak var authHomeViewController: AuthHomeViewController?
 
     init(presenter: UINavigationController, ezCoreData: EZCoreData) {
         self.presenter = presenter
@@ -45,17 +42,17 @@ extension AuthHomeCoordinator: AuthHomeViewControllerDelegate {
         let loginCoordinator = LoginCoordinator(presenter: presenter)
         loginCoordinator.start()
         loginCoordinator.stop = {
-            self.loginCoordinator = nil
+            self.removeChildCoordinator(childCoordinator: loginCoordinator)
         }
-        self.loginCoordinator = loginCoordinator
+        self.addChildCoordinator(childCoordinator: loginCoordinator)
     }
 
     func userDidClickSignUp() {
         let signUpCoordinator = SignUpCoordinator(presenter: presenter)
         signUpCoordinator.start()
         signUpCoordinator.stop = {
-            self.signUpCoordinator = nil
+            self.removeChildCoordinator(childCoordinator: signUpCoordinator)
         }
-        self.signUpCoordinator = signUpCoordinator
+        self.addChildCoordinator(childCoordinator: signUpCoordinator)
     }
 }

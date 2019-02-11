@@ -29,6 +29,9 @@ protocol CoordinatorProtocol: AnyObject {
     // method and variable used to make coordinators easy to deallocate
     func setDeallocallable(with object: DeInitCallable)
     var deallocallable: DeInitCallable? { get set }
+
+    /// The array containing any child Coordinators
+    var childCoordinators: [Coordinator] { get set }
 }
 
 extension CoordinatorProtocol {
@@ -41,14 +44,25 @@ extension CoordinatorProtocol {
         }
         deallocallable = object
     }
+
+    /// Add a child coordinator to the parent
+    func addChildCoordinator(childCoordinator: Coordinator) {
+        self.childCoordinators.append(childCoordinator)
+    }
+
+    /// Remove a child coordinator from the parent
+    func removeChildCoordinator(childCoordinator: Coordinator) {
+        self.childCoordinators = self.childCoordinators.filter { $0 !== childCoordinator }
+    }
 }
 
 // MARK: - Declaring the cordinator base class
 class Coordinator: NSObject, CoordinatorProtocol {
 
     // MARK: Properties
+    func start() { }
     var stop: (() -> Void)?
     weak var deallocallable: DeInitCallable?
 
-    func start() { }
+    var childCoordinators = [Coordinator]()
 }

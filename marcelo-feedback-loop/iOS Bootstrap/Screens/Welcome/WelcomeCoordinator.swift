@@ -19,10 +19,6 @@ class WelcomeCoordinator: Coordinator {
 
     private weak var welcomeViewController: WelcomeViewController?
 
-    private var authHomeCoordinator: AuthHomeCoordinator?
-    private var articleTableCoordinator: ArticleTableCoordinator?
-    private var questionsCollectionCoordinator: QuestionsCollectionCoordinator?
-
     init(presenter: UINavigationController, ezCoreData: EZCoreData) {
         self.presenter  = presenter
         self.ezCoreData = ezCoreData
@@ -64,9 +60,9 @@ extension WelcomeCoordinator: WelcomeViewControllerDelegate {
         let questionsCollectionCoordinator = QuestionsCollectionCoordinator(presenter: presenter)
         questionsCollectionCoordinator.start()
         questionsCollectionCoordinator.stop = {
-            self.questionsCollectionCoordinator = nil
+            self.removeChildCoordinator(childCoordinator: questionsCollectionCoordinator)
         }
-        self.questionsCollectionCoordinator = questionsCollectionCoordinator
+        self.addChildCoordinator(childCoordinator: questionsCollectionCoordinator)
     }
 
     fileprivate func setupArticleListScreen() {
@@ -74,9 +70,9 @@ extension WelcomeCoordinator: WelcomeViewControllerDelegate {
         let articleTableCoordinator = ArticleTableCoordinator(presenter: presenter, ezCoreData: ezCoreData)
         articleTableCoordinator.start()
         articleTableCoordinator.stop = {
-            self.articleTableCoordinator = nil
+            self.removeChildCoordinator(childCoordinator: articleTableCoordinator)
         }
-        self.articleTableCoordinator = articleTableCoordinator
+        self.addChildCoordinator(childCoordinator: articleTableCoordinator)
     }
 
     fileprivate func setupAuthHomeCoordinator() {
@@ -84,8 +80,8 @@ extension WelcomeCoordinator: WelcomeViewControllerDelegate {
         let authHomeCoordinator = AuthHomeCoordinator(presenter: presenter, ezCoreData: ezCoreData)
         authHomeCoordinator.start()
         authHomeCoordinator.stop = {
-            self.authHomeCoordinator = nil
+            self.removeChildCoordinator(childCoordinator: authHomeCoordinator)
         }
-        self.authHomeCoordinator = authHomeCoordinator
+        self.addChildCoordinator(childCoordinator: authHomeCoordinator)
     }
 }
