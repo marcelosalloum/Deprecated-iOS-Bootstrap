@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  AuthHomeViewController.swift
 //  iOS Bootstrap
 //
 //  Created by Marcelo Salloum dos Santos on 05/02/19.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class WelcomeViewController: CoordinatedViewController {
+class AuthHomeViewController: CoordinatedViewController {
 
-    weak var coordinator: WelcomeViewControllerDelegate?
+    weak var coordinator: AuthHomeViewControllerDelegate?
 
     @IBAction func loginButtonClicked(_ sender: UIButton) {
         self.coordinator?.userDidClickLogin()

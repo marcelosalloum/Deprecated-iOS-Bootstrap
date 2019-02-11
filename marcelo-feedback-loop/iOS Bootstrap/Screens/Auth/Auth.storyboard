@@ -26,22 +26,22 @@
             </objects>
             <point key="canvasLocation" x="-2089" y="179"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--Auth Home View Controller-->
         <scene sceneID="FOF-1L-He5">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ysx-YM-0yp" customClass="WelcomeViewController" customModule="iOS_Bootstrap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthHomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ysx-YM-0yp" customClass="AuthHomeViewController" customModule="iOS_Bootstrap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nck-av-wbQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunch_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rVp-TJ-h9i">
-                                <rect key="frame" x="93.666666666666671" y="108" width="187.66666666666663" height="120"/>
+                                <rect key="frame" x="93.666666666666671" y="148" width="187.66666666666663" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="xAo-Ao-xn6"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3G-Ah-h8M" customClass="DesignableButton" customModule="iOS_Bootstrap" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666657" y="312" width="131" height="60"/>
+                                <rect key="frame" x="37.666666666666657" y="352" width="131" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="NUk-jj-xf5"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBa-rA-dDY" customClass="DesignableButton" customModule="iOS_Bootstrap" customModuleProvider="target">
-                                <rect key="frame" x="206.33333333333331" y="312" width="131.33333333333331" height="60"/>
+                                <rect key="frame" x="206.33333333333331" y="352" width="131.33333333333331" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="HcQ-O1-oeg"/>
                                 </constraints>
@@ -61,21 +61,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrM-sC-BPl" customClass="DesignableButton" customModule="iOS_Bootstrap" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666657" y="402" width="131" height="60"/>
+                                <rect key="frame" x="37.666666666666657" y="442" width="131" height="60"/>
                                 <state key="normal" title="Articles List"/>
                                 <connections>
                                     <action selector="articleListButtonClicked:" destination="ysx-YM-0yp" eventType="touchUpInside" id="z5s-e7-7u2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6K-jv-O1a" customClass="DesignableButton" customModule="iOS_Bootstrap" customModuleProvider="target">
-                                <rect key="frame" x="206.33333333333331" y="402" width="131.33333333333331" height="60"/>
+                                <rect key="frame" x="206.33333333333331" y="442" width="131.33333333333331" height="60"/>
                                 <state key="normal" title="Collection"/>
                                 <connections>
                                     <action selector="collectionButtonClicked:" destination="ysx-YM-0yp" eventType="touchUpInside" id="QKL-2i-HP7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Use" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwN-BD-ans" customClass="DesignableLabel" customModule="iOS_Bootstrap" customModuleProvider="target">
-                                <rect key="frame" x="141.33333333333334" y="493" width="92.666666666666657" height="16"/>
+                                <rect key="frame" x="133.66666666666666" y="562" width="108" height="18.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                             <constraint firstItem="jwN-BD-ans" firstAttribute="centerX" secondItem="iJD-Ut-fkw" secondAttribute="centerX" id="LYp-wM-PZH"/>
                             <constraint firstItem="u3G-Ah-h8M" firstAttribute="centerX" secondItem="iJD-Ut-fkw" secondAttribute="centerX" multiplier="0.55" id="Lqj-JH-h32"/>
                             <constraint firstItem="O6K-jv-O1a" firstAttribute="centerX" secondItem="CBa-rA-dDY" secondAttribute="centerX" id="Rh7-lp-foq"/>
-                            <constraint firstItem="rVp-TJ-h9i" firstAttribute="top" secondItem="iJD-Ut-fkw" secondAttribute="top" constant="20" id="cQZ-xL-tCx"/>
+                            <constraint firstItem="rVp-TJ-h9i" firstAttribute="top" secondItem="iJD-Ut-fkw" secondAttribute="top" constant="60" id="cQZ-xL-tCx"/>
                             <constraint firstItem="O6K-jv-O1a" firstAttribute="centerY" secondItem="XrM-sC-BPl" secondAttribute="centerY" id="czG-xq-wOE"/>
                             <constraint firstItem="u3G-Ah-h8M" firstAttribute="top" secondItem="rVp-TJ-h9i" secondAttribute="bottom" constant="84" id="g0a-h1-jBo"/>
                             <constraint firstItem="CBa-rA-dDY" firstAttribute="centerX" secondItem="iJD-Ut-fkw" secondAttribute="centerX" multiplier="1.45" id="gyD-jN-3fa"/>
@@ -112,7 +112,7 @@
                             <constraint firstItem="rVp-TJ-h9i" firstAttribute="width" secondItem="nck-av-wbQ" secondAttribute="width" multiplier="0.5" id="mfa-EC-fec"/>
                             <constraint firstItem="XrM-sC-BPl" firstAttribute="height" secondItem="u3G-Ah-h8M" secondAttribute="height" id="mqp-BR-soG"/>
                             <constraint firstItem="O6K-jv-O1a" firstAttribute="height" secondItem="XrM-sC-BPl" secondAttribute="height" id="ryd-md-Hdr"/>
-                            <constraint firstItem="jwN-BD-ans" firstAttribute="top" secondItem="XrM-sC-BPl" secondAttribute="bottom" constant="31" id="u21-iR-3NV"/>
+                            <constraint firstItem="jwN-BD-ans" firstAttribute="top" secondItem="XrM-sC-BPl" secondAttribute="bottom" constant="60" id="u21-iR-3NV"/>
                             <constraint firstItem="rVp-TJ-h9i" firstAttribute="centerX" secondItem="nck-av-wbQ" secondAttribute="centerX" id="uob-bH-yQ0"/>
                             <constraint firstItem="CBa-rA-dDY" firstAttribute="width" secondItem="u3G-Ah-h8M" secondAttribute="width" id="vRF-Yw-S8s"/>
                             <constraint firstItem="u3G-Ah-h8M" firstAttribute="width" secondItem="nck-av-wbQ" secondAttribute="width" multiplier="0.35" id="wwX-iF-kGs"/>

@@ -14,7 +14,7 @@ class ApplicationCoordinator: Coordinator {
     var ezCoreData: EZCoreData
     let rootViewController: UINavigationController
     var articleTableCoordinator: ArticleTableCoordinator?
-    var welcomeCoordinator: WelcomeCoordinator?
+    var authHomeCoordinator: AuthHomeCoordinator?
     var questionsCollectionCoordinator: QuestionsCollectionCoordinator?
 
     fileprivate func setupArticleListScreen() {
@@ -27,14 +27,14 @@ class ApplicationCoordinator: Coordinator {
         self.articleTableCoordinator = articleTableCoordinator
     }
 
-    fileprivate func setupWelcomeCoordinator() {
+    fileprivate func setupAuthHomeCoordinator() {
         // Setups ArticleTableCoordinator
-        let welcomeCoordinator = WelcomeCoordinator(presenter: rootViewController, ezCoreData: ezCoreData)
-        welcomeCoordinator.start()
-        welcomeCoordinator.stop = {
-            self.welcomeCoordinator = nil
+        let authHomeCoordinator = AuthHomeCoordinator(presenter: rootViewController, ezCoreData: ezCoreData)
+        authHomeCoordinator.start()
+        authHomeCoordinator.stop = {
+            self.authHomeCoordinator = nil
         }
-        self.welcomeCoordinator = welcomeCoordinator
+        self.authHomeCoordinator = authHomeCoordinator
     }
 
     init(window: UIWindow) {
@@ -55,9 +55,9 @@ class ApplicationCoordinator: Coordinator {
 
         let isUserLogged = false
         if !isUserLogged {
-            setupWelcomeCoordinator()
+            setupAuthHomeCoordinator()
         } else {
-//            setupWelcomeCoordinator()
+//            setupAuthHomeCoordinator()
             let questionsCollectionCoordinator = QuestionsCollectionCoordinator(presenter: rootViewController)
             questionsCollectionCoordinator.start()
             questionsCollectionCoordinator.stop = {

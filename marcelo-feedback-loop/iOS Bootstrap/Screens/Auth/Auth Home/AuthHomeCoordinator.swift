@@ -1,5 +1,5 @@
 //
-//  WelcomeCoordinator.swift
+//  AuthHomeCoordinator.swift
 //  iOS Bootstrap
 //
 //  Created by Marcelo Salloum dos Santos on 05/02/19.
@@ -9,16 +9,16 @@
 import UIKit
 import EZCoreData
 
-protocol WelcomeViewControllerDelegate: class {
+protocol AuthHomeViewControllerDelegate: class {
     func userDidClickLogin()
     func userDidClickSignUp()
     func userDidClickArticleList()
     func userDidClickCollection()
 }
 
-class WelcomeCoordinator: Coordinator {
+class AuthHomeCoordinator: Coordinator {
     private let presenter: UINavigationController
-    private weak var welcomeViewController: WelcomeViewController?
+    private weak var authHomeViewController: AuthHomeViewController?
     private var loginCoordinator: LoginCoordinator?
     private var signUpCoordinator: SignUpCoordinator?
     private var articleTableCoordinator: ArticleTableCoordinator?
@@ -32,17 +32,17 @@ class WelcomeCoordinator: Coordinator {
 
     override func start() {
         // View Controller:
-        guard let welcomeViewController = WelcomeViewController.fromStoryboard(.auth) else { return }
-        welcomeViewController.coordinator = self
+        guard let authHomeViewController = AuthHomeViewController.fromStoryboard(.auth) else { return }
+        authHomeViewController.coordinator = self
 
         // Present View Controller:
-        presenter.pushViewController(welcomeViewController, animated: true)
-        setDeallocallable(with: welcomeViewController)
-        self.welcomeViewController = welcomeViewController
+        presenter.pushViewController(authHomeViewController, animated: true)
+        setDeallocallable(with: authHomeViewController)
+        self.authHomeViewController = authHomeViewController
     }
 }
 
-extension WelcomeCoordinator: WelcomeViewControllerDelegate {
+extension AuthHomeCoordinator: AuthHomeViewControllerDelegate {
     func userDidClickArticleList() {
         let newCoordinator = ArticleTableCoordinator(presenter: presenter, ezCoreData: ezCoreData)
         newCoordinator.start()
